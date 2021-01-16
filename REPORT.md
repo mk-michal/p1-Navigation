@@ -50,4 +50,12 @@ class ModelHyperparams:
     EPS_DECAY = 0.995
 
 ```
-
+#Possible Enhancements
+1. deeper network:
+    Our neural network contains only 3 layers, therefore could be described as shallow
+   Adding couple of layers  could increase accuracy of our model, but could lead to slower training 
+   and we could no longer train on cpu only.
+2. hyperparameter tuning:
+    We believe that we could achieve the goal (score over 13 in 100 consecutive episodes) in much 
+   lower number of iterations. Epsilon could be decreasing faster or learning rate could be higher 
+   to achieve faster convergence. This could lead however to divergence as well or exploading gradient.
