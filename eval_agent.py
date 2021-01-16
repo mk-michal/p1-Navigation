@@ -10,8 +10,7 @@ from navigation_agent import Agent
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--n-runs', type=int, default=3)
-parser.add_argument('--path', default = 'models/2021-01-15_22:20:47.172502')
-parser.add_argument('--episode', default=1900)
+parser.add_argument('--path', default = 'model/weights.pth')
 cfg = parser.parse_args()
 
 def run_trained_agent(
@@ -41,7 +40,7 @@ def run_trained_agent(
 
 if __name__ == '__main__':
     agent = Agent(37, 4, 3)
-    agent.qnetwork_local.load_state_dict(torch.load(os.path.join(cfg.path, f'model_{cfg.episode}.pth')))
+    agent.qnetwork_local.load_state_dict(torch.load(cfg.path))
     env = UnityEnvironment(file_name="Banana_Linux/Banana.x86_64", worker_id=1, seed=1)
     for run in range(cfg.n_runs):
         run_trained_agent(env, agent)

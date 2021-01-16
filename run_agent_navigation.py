@@ -1,8 +1,6 @@
 import datetime
 import os
 
-import gym
-import random
 import torch
 import numpy as np
 from collections import deque
@@ -10,7 +8,7 @@ import matplotlib.pyplot as plt
 from unityagents import UnityEnvironment
 
 from navigation_agent import Agent, AgentHyperparams
-from dqn_agent import Agent
+from navigation_agent import Agent
 
 
 class ModelHyperparams:
@@ -40,7 +38,7 @@ def dqn(env, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, ep
     timestamp = datetime.datetime.now()
     folder = str(datetime.datetime.now()).replace(' ', '_')
 
-    for i_episode in ran    ge(1, n_episodes + 1):
+    for i_episode in range(1, n_episodes + 1):
         env_info = env.reset(train_mode=True)['BananaBrain']
         state = env_info.vector_observations[0]
 
