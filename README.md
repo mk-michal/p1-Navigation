@@ -38,6 +38,14 @@ Results are saved as `model/results.txt` and chosem hyperparameters as `model/hy
 More detailes about the procedure and algorithms used are given in REPORT.md
 
 ## Setup
+Download Banana environment provided by Udacity and extract into main folder
+
+```
+Linux: https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip
+
+```
+
+
 Banana environment requires python 3.6
 
 To run the training or evaluation part install requirements in `requirements.txt` using pip as
